@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ApnaSnack — Coming Soon</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+
+/* ===== BODY ===== */
+body{
+  background:#000;
+  color:#fff;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:40px;
+}
+
+/* ===== LOGO ===== */
+.logo{
+  display:flex;
+  justify-content:center;
+  margin-bottom:22px;
+}
+
+.logo svg{
+  width:90px;
+  height:auto;
+}
+
+/* ===== BRAND ===== */
+.brand{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+  letter-spacing:1px;
+}
+
+.brand span{
+  display:inline-block;
+  opacity:0;
+  transform:scale(0.2);
+  filter:blur(20px);
+  animation:brandIn .9s cubic-bezier(.2,1.6,.4,1) forwards;
+}
+
+@keyframes brandIn{
+  60%{
+    opacity:1;
+    transform:scale(1.6);
+    filter:blur(4px);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+    filter:none;
+  }
+}
+
+/* ===== COMING SOON ===== */
+.coming{
+  margin-top:12px;
+  font-size:2.2rem;
+  opacity:0;
+  transform:scale(1.25);
+  filter:blur(30px);
+  animation:comingIn 1.2s ease forwards;
+  animation-delay:.9s;
+}
+
+@keyframes comingIn{
+  to{
+    opacity:1;
+    transform:scale(1);
+    filter:none;
+  }
+}
+
+/* ===== TAGLINE ===== */
+.tagline{
+  margin-top:18px;
+  font-size:1.1rem;
+  color:#aaa;
+  opacity:0;
+  animation:
+    fadeUp 1s ease forwards,
+    breathe 4s ease-in-out infinite;
+  animation-delay:1.4s,2.6s;
+}
+
+@keyframes fadeUp{to{opacity:1}}
+@keyframes breathe{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+}
+
+/* ===== CONTACT BUTTONS ===== */
+.contacts{
+  margin-top:36px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1.8s;
+}
+
+.contact-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 24px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  text-decoration:none;
+  font-size:.95rem;
+  transition:.3s ease;
+}
+
+.contact-btn svg{
+  width:18px;
+  height:18px;
+  fill:#fff;
+}
+
+.contact-btn:hover{
+  background:rgba(255,255,255,.15);
+  transform:scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:40px;
+  font-size:.85rem;
+  color:#777;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:2.2s;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .brand{font-size:2.8rem}
+  .coming{font-size:1.8rem}
+  .contacts{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+  <!-- PREMIUM SNACK LOGO -->
+  <div class="logo">
+    <!-- Snack layers logo -->
+    <svg viewBox="0 0 120 60">
+      <rect x="10" y="10" width="100" height="6" rx="3" fill="white"/>
+      <rect x="20" y="26" width="80" height="6" rx="3" fill="white"/>
+      <rect x="30" y="42" width="60" height="6" rx="3" fill="white"/>
+    </svg>
+  </div>
+
+  <!-- BRAND -->
+  <h1 id="brand" class="brand"></h1>
+
+  <h2 class="coming">Coming soon.</h2>
+
+  <p class="tagline">
+    A new snack experience is on the way.
+  </p>
+
+  <!-- CONTACTS -->
+  <div class="contacts">
+
+    <!-- WhatsApp -->
+    <a class="contact-btn" href="https://wa.me/918114982475" target="_blank">
+      <svg viewBox="0 0 32 32">
+        <path d="M16 2C8.3 2 2 8.1 2 15.7c0 2.8.8 5.4 2.3 7.6L2 30l6.9-2.2c2 .9 4.2 1.4 6.5 1.4 7.7 0 14-6.1 14-13.7S23.7 2 16 2z"/>
+        <path d="M22.1 18.9c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1s-.8 1-.9 1.2-.3.2-.6.1c-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3z"/>
+      </svg>
+      WhatsApp
+    </a>
+
+    <!-- Email -->
+    <a class="contact-btn" href="mailto:som11474@flash.co">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 6h18v12H3z"/>
+        <path d="M3 6l9 7 9-7"/>
+      </svg>
+      Email
+    </a>
+
+  </div>
+
+  <footer>© 2026 ApnaSnack</footer>
+
+</div>
+
+<script>
+/* Letter-by-letter brand animation */
+const brandText = "ApnaSnack";
+const brand = document.getElementById("brand");
+
+brandText.split("").forEach((char,i)=>{
+  const span = document.createElement("span");
+  span.textContent = char;
+  span.style.animationDelay = `${i * 0.07}s`;
+  brand.appendChild(span);
+});
+</script>
+
+</body>
+</html>
