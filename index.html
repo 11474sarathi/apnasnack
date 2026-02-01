@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Apna Snack — Coming Soon</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Playfair+Display:ital,wght@0,500;1,500&family=Pacifico&family=Yeseva+One&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --sky:#dff3ff;
+  --sun:#ffe4b5;
+  --mint:#b7e4c7;
+  --peach:#ffcab1;
+  --butter:#fff1a8;
+  --tea:#c98c5d;
+  --ink:#3b2f2a;
+
+  --night-sky:#1b1930;
+  --night-dusk:#362c5f;
+
+  --card:#fffdf6;
+  --card-night:#2a2545;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Handlee', cursive;
+  background:linear-gradient(var(--sky),var(--sun));
+  color:var(--ink);
+  overflow-x:hidden;
+  transition:background 3s ease,color 3s ease;
+}
+
+body.night{
+  background:linear-gradient(var(--night-sky),var(--night-dusk));
+  color:#f3f1ee;
+}
+
+/* Floating doodles */
+.doodle{
+  position:fixed;
+  font-size:26px;
+  opacity:.4;
+  animation:float 7s ease-in-out infinite;
+  pointer-events:none;
+}
+.d1{top:8%;left:5%}
+.d2{top:16%;right:10%}
+.d3{bottom:18%;left:8%}
+.d4{bottom:22%;right:12%}
+.d5{top:52%;left:3%}
+.d6{top:60%;right:4%}
+.d7{top:35%;right:3%}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-16px)}
+}
+
+/* Hero */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  max-width:940px;
+  padding:70px 50px;
+  border-radius:46px;
+  text-align:center;
+  box-shadow:0 45px 100px rgba(0,0,0,.18);
+  animation:rise 2.2s ease forwards;
+  opacity:0;
+}
+
+body.night .card{
+  background:var(--card-night);
+}
+
+@keyframes rise{
+  from{opacity:0;transform:translateY(70px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Logo */
+.logo-wrap{
+  display:inline-block;
+  padding:24px 42px;
+  border-radius:999px;
+  background:linear-gradient(145deg,var(--butter),var(--mint));
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.logo{
+  font-family:'Yeseva One', serif;
+  font-size:58px;
+  color:#5a3e2b;
+  letter-spacing:1px;
+}
+
+.logo small{
+  display:block;
+  font-family:'Handlee', cursive;
+  font-size:18px;
+  margin-top:8px;
+  opacity:.85;
+}
+
+/* Tagline */
+.tagline{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-size:24px;
+  margin:26px 0 34px;
+}
+
+/* Story */
+.story{
+  font-size:22px;
+  line-height:1.9;
+  max-width:760px;
+  margin:0 auto 55px;
+}
+
+/* Divider */
+.divider{
+  font-size:28px;
+  margin:55px 0;
+  opacity:.65;
+}
+
+/* Coming soon */
+.coming{
+  background:linear-gradient(145deg,var(--peach),var(--butter));
+  border-radius:38px;
+  padding:52px 34px;
+  max-width:680px;
+  margin:0 auto;
+  animation:breath 6s ease-in-out infinite;
+}
+
+body.night .coming{
+  background:linear-gradient(145deg,#3a3363,#2c2652);
+}
+
+@keyframes breath{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.035)}
+}
+
+.coming h2{
+  font-size:40px;
+  margin-bottom:16px;
+}
+
+.coming p{
+  font-size:22px;
+  line-height:1.8;
+}
+
+.soon{
+  margin-top:20px;
+  font-size:30px;
+}
+
+/* Signature */
+.signature{
+  margin-top:45px;
+  font-family:'Pacifico', cursive;
+  font-size:30px;
+  color:var(--tea);
+}
+
+/* Cat */
+.cat{
+  position:fixed;
+  bottom:18px;
+  left:-60px;
+  font-size:38px;
+  animation:walk 26s linear infinite;
+  opacity:.85;
+}
+
+@keyframes walk{
+  to{left:110%}
+}
+
+/* Toggle */
+.toggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+  padding:12px 18px;
+  border-radius:24px;
+  background:#fff;
+  font-size:14px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  z-index:10;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .logo{font-size:44px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Doodles -->
+<div class="doodle d1">🍃</div>
+<div class="doodle d2">✨</div>
+<div class="doodle d3">🐱</div>
+<div class="doodle d4">☁️</div>
+<div class="doodle d5">🍘</div>
+<div class="doodle d6">🧸</div>
+<div class="doodle d7">🌼</div>
+
+<!-- Cat -->
+<div class="cat">🐱</div>
+
+<!-- Toggle -->
+<div class="toggle" onclick="document.body.classList.toggle('night')">🌙</div>
+
+<section class="hero">
+  <div class="card">
+
+    <div class="logo-wrap">
+      <div class="logo">Apna Snack</div>
+      <small>fresh • cozy • desi 🍘</small>
+    </div>
+
+    <div class="tagline">Har Bite Mein Kahaani</div>
+
+    <div class="story">
+      When the sky turns pastel 🌤️<br>
+      and flowers sway in the breeze 🌼,<br><br>
+
+      a tiny snack shop comes alive.<br>
+      Masala smells like memories 🧂<br>
+      chai giggles on the stove ☕<br>
+      laughter floats softly ✨<br>
+      and a chubby cat guards the snacks 🐾<br><br>
+
+      This isn’t just a snack.<br>
+      This is <b>home in every bite</b> 💛
+    </div>
+
+    <div class="divider">🍃 ⭐ ☁️ 🍘</div>
+
+    <div class="coming">
+      <h2>Coming Soon… ⏳</h2>
+      <p>
+        Small batches 🌾<br>
+        Funky flavours 🎨<br>
+        Made with love 🫶
+      </p>
+      <div class="soon">✨ Opening Very Soon ✨</div>
+    </div>
+
+    <div class="signature">— sarathi ✍️</div>
+
+  </div>
+</section>
+
+</body>
+</html>
